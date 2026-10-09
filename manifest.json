@@ -1,5 +1,5 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "Classroom PDF Downloader",
   "version": "0.1.0",
   "description": "Download all PDF files from a Google Classroom assignment page.",
@@ -11,9 +11,7 @@
   },
   "permissions": [
     "downloads",
-    "tabs"
-  ],
-  "host_permissions": [
+    "tabs",
     "https://classroom.google.com/*"
   ],
   "background": {
@@ -26,7 +24,7 @@
       "run_at": "document_idle"
     }
   ],
-  "action": {
+  "browser_action": {
     "default_title": "Download PDFs",
     "default_popup": "popup.html"
   }
