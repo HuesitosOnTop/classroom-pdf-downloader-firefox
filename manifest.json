@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Classroom PDF Downloader",
+  "version": "0.1.0",
+  "description": "Download all PDF files from a Google Classroom assignment page.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "classroom-pdf-downloader@local",
+      "strict_min_version": "109.0"
+    }
+  },
+  "permissions": [
+    "downloads",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://classroom.google.com/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://classroom.google.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Download PDFs",
+    "default_popup": "popup.html"
+  }
+}
